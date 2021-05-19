@@ -24,7 +24,7 @@ const IntroSection = () => {
                             size={'big'}
                             className="lg:col-span-4 lg:col-start-3"
                             onClick={()=>{
-                                fetch('http://localhost/api/auth/login/talent/', {redirect: 'manual'})
+                                fetch(process.env.BACKEND + '/login/talent/', {redirect: 'manual'})
                                     .then((res) => {
                                         router.push(res.url)
                                     })

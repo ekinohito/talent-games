@@ -12,7 +12,7 @@ const Header = () => {
     const isAuthenticated = !!userInfo?.state?.email
     const button = isAuthenticated?
         <TWButton color={'blue-dark'} size={'default'} onClick={()=>{
-            fetch('http://localhost/api/logout/talent/', {credentials: 'include'})
+            fetch(process.env.BACKEND + '/api/logout/talent/', {credentials: 'include'})
                 .then(() => {
                     router.push('/')
                 })
@@ -20,7 +20,7 @@ const Header = () => {
             Выйти
         </TWButton>:
         <TWButton color={'emerald'} size={'default'} onClick={()=>{
-            fetch('http://localhost/api/auth/login/talent/', {redirect: 'manual'})
+            fetch(process.env.BACKEND + '/login/talent/', {redirect: 'manual'})
                 .then((res) => {
                     router.push(res.url)
                 })
