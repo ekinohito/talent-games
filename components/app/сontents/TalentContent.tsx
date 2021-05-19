@@ -30,7 +30,7 @@ const TalentContent = ({className}: { className?: string }) => {
                     <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"} onClick={()=>{
                         fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
                             .then((res) => {
-                                router.push(res.url)
+                                router.push('/')
                             })
                     }}>Выйти</TWButton>
                 </div>
