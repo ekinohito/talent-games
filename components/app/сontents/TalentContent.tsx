@@ -103,8 +103,8 @@ const TalentContent = ({className}: { className?: string }) => {
         )
     } else {
         return (
-            <div className={`gap-y-2 flex flex-col items-center justify-center min-h-400`}>
-                <span>ПРИВЯЖИТЕ СВОЙ АККАУНТ TALENT ID</span>
+            <div className={`gap-y-2 flex flex-col items-center justify-center min-h-400 py-12`}>
+                <span className="mb-4">ПРИВЯЖИТЕ СВОЙ АККАУНТ TALENT ID</span>
                 <TWButton color={"emerald"} size={"default"}onClick={()=>{
                     fetch(process.env.BACKEND + '/auth/login/talent/', {redirect: 'manual'})
                         .then((res) => {
