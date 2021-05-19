@@ -3,9 +3,11 @@ import {useAppRouter} from "../../../context/AppRouter";
 import Image from "next/image";
 import TWButton from "../../tailwind/TWButton";
 import {useUserInfo} from "../../../context/UserContext";
+import {useRouter} from "next/router";
 
 const TalentContent = ({className}: { className?: string }) => {
-    const userInfo = useUserInfo()
+    const userInfo = useUserInfo();
+    const router = useRouter();
     const isAuthenticated = !!userInfo?.state?.email
     if (isAuthenticated) {
         return (
@@ -25,7 +27,12 @@ const TalentContent = ({className}: { className?: string }) => {
                         <span className={`text-caption text-emerald`}>Talent ID: 158011</span>
                     </div>
                     <TWButton color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
-                    <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"}>Выйти</TWButton>
+                    <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"}onClick={()=>{
+                        fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
+                            .then((res) => {
+                                router.push(res.url)
+                            })
+                    }}>Выйти</TWButton>
                 </div>
                 <div className={`col-span-4`}>
                     <div className={`p-3 h-full border-2 border-emerald-secondary rounded-md`}>
@@ -98,7 +105,12 @@ const TalentContent = ({className}: { className?: string }) => {
         return (
             <div className={`gap-y-2 flex flex-col items-center justify-center min-h-400`}>
                 <span>ПРИВЯЖИТЕ СВОЙ АККАУНТ TALENT ID</span>
-                <TWButton color={"emerald"} size={"big"}>Авторизоваться</TWButton>
+                <TWButton color={"emerald"} size={"big"}onClick={()=>{
+                    fetch(process.env.BACKEND + '/auth/login/talent/', {redirect: 'manual'})
+                        .then((res) => {
+                            router.push(res.url)
+                        })
+                }}>Авторизоваться</TWButton>
             </div>)
 
     }
