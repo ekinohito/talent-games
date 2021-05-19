@@ -26,8 +26,8 @@ const TalentContent = ({className}: { className?: string }) => {
                         <span className={`text-overline`}>{`${userInfo.state?.email}`}</span>
                         <span className={`text-caption text-emerald`}>Talent ID: 158011</span>
                     </div>
-                    <TWButton color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
-                    <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"}onClick={()=>{
+                    <TWButton href="https://talent.kruzhok.org/profile" color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
+                    <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"} onClick={()=>{
                         fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
                             .then((res) => {
                                 router.push(res.url)
