@@ -17,7 +17,7 @@ const SideMenu = ({className}: {className?: string}) => {
                 <div className={`flex 
                                 justify-between 
                                 text-subtitle1
-                                text-${state.category === key ? 'emerald-secondary' : 'black'}
+                                ${state.category === key ? 'text-emerald-secondary' : 'text-black'}
                                 py-4
                                 cursor-pointer
                                 select-none

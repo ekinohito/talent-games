@@ -38,7 +38,7 @@ const AllGames = () => {
             <div className="flex justify-around mb-4 shadow-lg rounded-md">
                 {Object.keys(games).map((key, index) =>
                     <div
-                        className={`rounded-lg bg-${activeGame === key ? 'emerald-light': 'white'} px-4 py-2 text-h6 cursor-pointer transition-colors duration-300`}
+                        className={`rounded-lg ${activeGame === key ? 'bg-emerald-light': 'bg-white'} px-4 py-2 text-h6 cursor-pointer transition-colors duration-300  `}
                         key={index}
                         onClick={() => onGameChange(key as GameType)}
                     >
