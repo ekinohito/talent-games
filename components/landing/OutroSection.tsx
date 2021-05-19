@@ -33,7 +33,7 @@ const OutroSection = () => {
                             size={'big'}
                             className="lg:col-span-4 lg:col-start-5"
                             onClick={()=>{
-                                fetch(process.env.BACKEND + '/api/auth/login/talent/', {redirect: 'manual'})
+                                fetch(process.env.BACKEND + '/auth/login/talent/', {redirect: 'manual'})
                                     .then((res) => {
                                         router.push(res.url)
                                     })

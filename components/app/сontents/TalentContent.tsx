@@ -26,14 +26,13 @@ const TalentContent = ({className}: { className?: string }) => {
                         <span className={`text-overline`}>{`${userInfo.state?.email}`}</span>
                         <span className={`text-caption text-emerald`}>Talent ID: 158011</span>
                     </div>
-                    <TWButton href="https://talent.kruzhok.org/profile" color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
-                    <TWButton onClick={()=>{
-                        fetch(process.env.BACKEND + '/api/logout/talent/', {credentials: 'include'})
-                            .then(() => {
-                                router.push('/')
+                    <TWButton color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
+                    <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"}onClick={()=>{
+                        fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
+                            .then((res) => {
+                                router.push(res.url)
                             })
-                    }}
-                              color={"blue-dark"} size={"default"} className={"self-stretch"}>Выйти</TWButton>
+                    }}>Выйти</TWButton>
                 </div>
                 <div className={`col-span-4`}>
                     <div className={`p-3 h-full border-2 border-emerald-secondary rounded-md`}>
@@ -106,8 +105,8 @@ const TalentContent = ({className}: { className?: string }) => {
         return (
             <div className={`gap-y-2 flex flex-col items-center justify-center min-h-400`}>
                 <span>ПРИВЯЖИТЕ СВОЙ АККАУНТ TALENT ID</span>
-                <TWButton color={"emerald"} size={"default"} onClick={()=>{
-                    fetch(process.env.BACKEND + '/api/auth/login/talent/', {redirect: 'manual'})
+                <TWButton color={"emerald"} size={"big"}onClick={()=>{
+                    fetch(process.env.BACKEND + '/auth/login/talent/', {redirect: 'manual'})
                         .then((res) => {
                             router.push(res.url)
                         })
