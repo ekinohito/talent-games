@@ -28,10 +28,10 @@ const TalentContent = ({className}: { className?: string }) => {
                     </div>
                     <TWButton href="https://talent.kruzhok.org/profile" color={"emerald"} size={"default"} className={"self-stretch"}>Изменить</TWButton>
                     <TWButton color={"blue-dark"} size={"default"} className={"self-stretch"} onClick={()=>{
-                        fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
-                            .then((res) => {
+                        // fetch(process.env.BACKEND + '/logout/talent/', {redirect: 'manual'})
+                        //     .then((res) => {
                                 router.push('/')
-                            })
+                            // })
                     }}>Выйти</TWButton>
                 </div>
                 <div className={`col-span-4`}>
