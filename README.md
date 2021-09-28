@@ -1,18 +1,1 @@
-## Getting Started
-
-packages
-```bash
-npm install
-# or
-yarn upgrade
-```
-
-start
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
+FIGMA - https://www.figma.com/file/ff5v4CKKVORi7uHB5Qz9dN/Talent.Games?node-id=34%3A783
